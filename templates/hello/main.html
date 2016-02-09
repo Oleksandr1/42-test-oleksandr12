@@ -5,24 +5,24 @@
 <h3>42 Coffee Cups Test Assigment</h3>
 <table>
   <tr>
-    <td>Oleksandr</td>
+    <td>{{ my_data.first_name }}</td>
     <td>Contacts</td>
   </tr>
   <tr>
-    <td>Shcherbyna</td>
-    <td>sanya071186@gmail.com</td>
+    <td>{{ my_data.second_name }}</td>
+    <td>{{ my_data.email }}</td>
   </tr>
   <tr>
-    <td>07.11.1986</td>
-    <td>pock@jabber.ua<br>sanya071186</td>
+    <td>{{ my_data.birthday }}</td>
+    <td>{{ my_data.jabber }}<br>{{ me_data.skype }}</td>
   </tr>
   <tr>
     <td>Bio:</td>
     <td>Other Contacts</td>
   </tr>
   <tr>
-    <td class ="multiline">My long-long long-long biography</td>
-    <td class ="multiline">No other contacts</td>
+    <td class ="multiline">{{ my_data.biography }}</td>
+    <td class ="multiline">{{ my_data.other_contacts }}</td>
   </tr>
 </table>
 <hr>
