@@ -8,6 +8,4 @@ class SomeTests(TestCase):
         """
         put docstrings in your tests
         """
-
-        
         assert(2 + 2 == 4)
