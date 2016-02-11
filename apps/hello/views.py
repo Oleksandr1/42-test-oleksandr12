@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from models import MyData
-# from django.contrib.auth.models import User
+
 # Create your views here.
 
 
