@@ -21,7 +21,7 @@ class Migration(SchemaMigration):
             ('other_contacts', self.gf('django.db.models.fields.TextField')(blank=True)),
         ))
         db.send_create_signal(u'hello', ['MyData'])
-
+        
 
     def backwards(self, orm):
         # Deleting model 'MyData'
