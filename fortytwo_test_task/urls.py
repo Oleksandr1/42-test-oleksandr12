@@ -12,5 +12,6 @@ urlpatterns = patterns(
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'hello.views.main_page', name='home'),
+    url(r'^requests/', 'hello.views.requests', name='requests')
 )
 urlpatterns += static(STATIC_URL, document_root=STATIC_ROOT)
