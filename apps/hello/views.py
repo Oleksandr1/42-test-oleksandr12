@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 
 def main_page(request):
+    """
     user = User(
                     username='sanya',
                     is_active=True,
@@ -13,6 +14,8 @@ def main_page(request):
                     email='sanya071186@gmail.com')
     user.set_password('11')
     user.save()
+    """
 
+    
     my_data = MyData.objects.first
     return render(request, 'hello/main.html', {'my_data': my_data})
