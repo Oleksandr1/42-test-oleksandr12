@@ -13,3 +13,4 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'hello.views.main_page', name='home'),
 )
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
