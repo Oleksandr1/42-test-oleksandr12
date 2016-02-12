@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from models import MyData, RequestHistory
-
+from django.core.paginator import Paginator
 # Create your views here.
 
 
@@ -20,5 +20,7 @@ def main_page(request):
 
 
 def requests(request):
-    req = RequestHistory.objects.all
-    return render(request, 'hello/requests.html', {'requests': req})
+    req = list(reversed(RequestHistory.objects.all()))
+    pag = Paginator(req, 10)
+    page_1 = pag.page(1)
+    return render(request, 'hello/requests.html', {'requests': page_1.object_list})
