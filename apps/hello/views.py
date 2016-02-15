@@ -23,4 +23,5 @@ def requests(request):
     req = list(reversed(RequestHistory.objects.all()))
     pag = Paginator(req, 10)
     page_1 = pag.page(1)
-    return render(request, 'hello/requests.html', {'requests': page_1.object_list})
+    return render(request, 'hello/requests.html',
+                  {'requests': page_1.object_list})
