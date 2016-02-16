@@ -9,5 +9,11 @@
       <li>PATH: {{req.path}}     GET: {{req.get}}         POST: {{req.post}}</li>
       {% endfor %}
   </ol>
-
+<nav>
+  <div class='pagination'>
+    {% for p in requests.paginator.page_range %}
+    <a href="{% url 'requests' %}?page={{ p }}">{{ p }}</a>
+    {% endfor %}
+  </div>
+</nav>
 {% endblock content %}
