@@ -13,11 +13,13 @@ def requests(request):
     req = list(reversed(RequestHistory.objects.all()))
     paginator = Paginator(req, 10)
     page = request.GET.get('page')
+
     try:
-        req=paginator.page(page)
+        req = paginator.page(page)
     except PageNotAnInteger:
-        req=paginator.page(1)
+        req = paginator.page(1)
     except EmptyPage:
-        req=paginator.page(paginator.num_pages)
+        req = paginator.page(paginator.num_pages)
+
     return render(request, 'hello/requests.html',
                   {'requests': req})
