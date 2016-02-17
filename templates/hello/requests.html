@@ -4,16 +4,32 @@
 
 {% block content %}
   <h4> Request: </h4>
-  <ol>
+<table class="table">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>PATH</td>
+      <td>GET</td>
+      <td>POST</td>
+    </tr>
+  </thead>
+  <tbody>
     {% for req in requests %}
-      <li>PATH: {{req.path}}     GET: {{req.get}}         POST: {{req.post}}</li>
-      {% endfor %}
-  </ol>
-<nav>
-  <div class='pagination'>
-    {% for p in requests.paginator.page_range %}
-    <a href="{% url 'requests' %}?page={{ p }}">{{ p }}</a>
+    <tr>
+      {% if  req.is_showed %}
+      <td>{{ forloop.counter }}</td>
+      <td>{{req.path}}</td>
+      <td>{{req.get}}</td>
+      <td>{{req.post}}</td>
+      {% else %}
+      <td><b>{{ forloop.counter }}</b></td>
+      <td><b>{{req.path}}</b></td>
+      <td><b>{{req.get}}</b></td>
+      <td><b>{{req.post}}</b></td>
+    </tr>
+    {% endif %}
     {% endfor %}
-  </div>
-</nav>
+  </tbody>
+</table>
+
 {% endblock content %}

@@ -46,3 +46,4 @@ class RequestHistory(models.Model):
     path = models.CharField(max_length=256, verbose_name="Request Path")
     post = models.TextField(verbose_name="POST")
     get = models.TextField(verbose_name="GET")
+    is_showed = models.BooleanField(default=False)
