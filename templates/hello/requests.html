@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block title %} Requests {% endblock title %}
-
 {% block content %}
   <h4> Request: </h4>
 <table class="table">
@@ -31,5 +30,7 @@
     {% endfor %}
   </tbody>
 </table>
-
 {% endblock content %}
+{% block extra_js %}
+<script src="{% static 'js/request.js' %}"></script>
+{% endblock extra_js %}
